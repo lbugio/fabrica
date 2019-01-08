@@ -1,0 +1,21 @@
+
+<form #avioForm="ngForm" (ngSubmit)="addAvio(avioForm)">
+  <mat-card>
+    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="avioService.selectedAvio._id">
+    <p>
+      <mat-form-field appearance="standard">
+        <mat-label>Nombre Avio</mat-label>
+        <input name="nombre" #nombre="ngModel" [(ngModel)]="avioService.selectedAvio.nombre" matInput placeholder="Nombre del Avio">
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="standard">
+        <mat-label>Precio Avio</mat-label>
+        <input name="precio" #precio="ngModel" [(ngModel)]="avioService.selectedAvio.precio" matInput placeholder="Precio($)">
+      </mat-form-field>
+    </p>
+    <button mat-button (click)="addAvio()">Guardar</button><button mat-button (click)="resetForm(avioForm)" >Limpiar</button>
+    
+  </mat-card>
+  
+  </form>

@@ -1,0 +1,166 @@
+
+<produccion></produccion>
+
+ 
+  
+  
+
+<mat-card class="example-card">
+    <mat-card-actions>
+        <button   onclick="window.print()" mat-button>IMPRIMIR</button>
+        
+      </mat-card-actions>
+
+      
+        
+        <mat-card-content>
+            <table>
+                <tr >
+                  <td colspan="2">ORDEN DE CORTE</td>
+                  <td><mat-form-field>
+                      <input matInput [matDatepicker]="picker1" placeholder="Fecha pedido" [formControl]="date">
+                      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                    <td>
+                      <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Nº orden">
+                      </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field class="example-chip-list">
+                            <mat-chip-list #chipArticulos>
+                              <mat-chip class="chip"  *ngFor="let articulo of articulos" [selectable]="selectable"
+                                       [removable]="removable" (removed)="remove(articulo)">
+                                {{articulo.name}}
+                                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                              </mat-chip>
+                              <input  placeholder="Articulo"
+                                     [matChipInputFor]="chipArticulos"
+                                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                     [matChipInputAddOnBlur]="addOnBlur"
+                                     (matChipInputTokenEnd)="add($event)">
+                            </mat-chip-list>
+                        </mat-form-field>
+                    </td>
+                    <td> <mat-form-field class="example-full-width">
+                        <input type="text" placeholder="Linea" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                          <mat-option *ngFor="let option of options" [value]="option">
+                            {{option}}
+                          </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                  <tr><td colspan="3">
+                      <mat-form-field class="example-full-width">
+                          <input matInput placeholder="Descripcion" >
+                        </mat-form-field>
+                      </td>
+                  </tr>
+                    <tr>
+                      <td>
+                        <table>
+                            <tr>
+                                <td>TALLE</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td>
+                            </tr>
+                            <tr>
+                                  <td>CURVA</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td><td>S</td>
+                            </tr>
+                        </table>
+                      </td>
+                      <td>
+                          <mat-form-field class="example-chip-list">
+                              <mat-chip-list #chipTelas>
+                                <mat-chip *ngFor="let tela of telas" [selectable]="selectable"
+                                         [removable]="removable" (removed)="remove(tela)">
+                                  {{tela.name}}
+                                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                                </mat-chip>
+                                <input placeholder="Telas"
+                                       [matChipInputFor]="chipTelas"
+                                       [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                       [matChipInputAddOnBlur]="addOnBlur"
+                                       (matChipInputTokenEnd)="add($event)">
+                              </mat-chip-list>
+                            </mat-form-field>
+
+                      </td>
+                      <td>
+                          <mat-form-field class="example-full-width">
+                              <textarea matInput placeholder="Fecha Corte"></textarea>
+                            </mat-form-field>
+                        
+                      </td>
+                     
+                        
+                    </tr>
+                  </table>
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Club</th>
+                        <th>Color</th>
+                        <th colspan="8">Talles</th>
+                        <th>Toral a cortar</th>
+                        <th colspan="8">Talles</th>
+                        <th>Total Cortado</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                        <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+
+                    </tbody>
+                    
+                  </table>
+                  <table>
+                   <th>Tela</th><th colspan="8"></th>
+                   <th>Tela</th><th colspan="8"></th>
+                   <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                   <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                   <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                   <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                   <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                   <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                   <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                  </table>
+                  <table >
+                    <th >Telas</th><th></th><th></th><th></th><th></th>
+                    <tr><td>Consumos</td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Tizó</td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Encimó</td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td>Cortó</td><td></td><td></td><td></td><td></td></tr>
+                    
+                  </table>
+                  <table>
+                    <th>Observaciones</th>
+                    <tr><td></td></tr>
+                    <tr><td></td></tr>
+                    <tr><td></td></tr>
+                    <tr><td></td></tr>
+                  </table>
+                  
+
+                    
+                
+
+                  
+        </mat-card-content>
+      
+</mat-card>
+
+
+

@@ -1,0 +1,36 @@
+<insumos></insumos>
+
+<button mat-button (click)="openDialog()">+</button>
+
+<table mat-table >
+      
+          <tr>
+            <th mat-sort-header="nombre">Nombre</th>
+            <th mat-sort-header="precio">Precio</th>
+            <th mat-sort-header="editar">Editar</th>
+            <th mat-sort-header="borrar">Borrar</th>
+            
+          </tr>
+        
+          <tr *ngFor="let avio of avioService.avios">
+            <td>{{avio.nombre}}</td>
+            <td>{{avio.precio}}</td>
+            <td>
+              <a (click)="editAvio(avio._id)">
+                <i class="material-icons">edit</i>
+              </a>
+            </td>
+            <td>
+                <a (click)="deleteAvio(avio._id)">
+                  <i class="material-icons">delete</i>
+                </a>
+              </td>
+            
+          </tr>
+          
+
+        </table>
+        
+  
+
+
