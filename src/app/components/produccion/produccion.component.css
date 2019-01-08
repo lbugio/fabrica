@@ -1,0 +1,8 @@
+@media print {
+    mat-card-actions,
+    mat-sidenav-container 
+     {
+      display: none !important;
+    }
+  }
+  

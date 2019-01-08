@@ -1,0 +1,50 @@
+.example-card {
+    max-width: 700px;
+  }
+
+  
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}  
+
+
+
+tr {
+  padding: 10px;
+
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: center;
+  padding: 10px;
+  
+
+}
+
+@media print {
+  
+  mat-card-actions
+  {
+    display: none !important;
+  }
+
+  
+}
+
+
+
+
+
+
+
+
+
